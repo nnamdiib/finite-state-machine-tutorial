@@ -30,14 +30,12 @@ M = (Q, E, d, q, F)
 
 string = '10001'
 
-def check_string(string, q):
+def is_accepted(string, q):
   for char in string:
     q = d(q, char)
   if q == 'q0':
-    print('{} is accepted'.format(string))
+    return True
   else:
-    print('{} is rejected'.format(string))
+    return False
 
-check_string('1001', q)
-check_string('1', q)
-check_string('10011', q)
+is_accepted('1001', q)
