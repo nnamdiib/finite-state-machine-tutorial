@@ -34,8 +34,6 @@ F = ('q0')
 # Now we formally define our deterministic automaton.
 M = (Q, E, d, q, F)
 
-string = '10001'
-
 def is_accepted(string, q):
   for char in string:
     q = d(q, char)
