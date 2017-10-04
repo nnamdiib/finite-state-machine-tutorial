@@ -37,10 +37,8 @@ M = (Q, E, d, q, F)
 def is_accepted(string, q):
   for char in string:
     q = d(q, char)
-  if q in F:
-    return True
-  else:
-    return False
+
+  return True if q in F else False
 
 string1 = '1001' # Should be False
 string2 = '00000000011100000000' # Should be True
