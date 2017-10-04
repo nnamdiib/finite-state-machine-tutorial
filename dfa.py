@@ -2,11 +2,12 @@ from logger import log
 # Complementary code for my tutorial on the basics
 # of finite state machines.
 
-# This machine recognises strings with an odd number of 1's
+# This machine recognises binary strings with an odd number of 1's
+
+# Our set of states, Q
 Q = ('qe', 'q0')
 
-E = ('0', '1')
-
+# Our transition function
 # d(state, symbol) --> state
 @log
 def d(state, symbol):
@@ -21,8 +22,13 @@ def d(state, symbol):
     next_state = 'qe'
   return next_state
 
+# Our alphabet (set of symbols)
+E = ('0', '1')
+
+# The initial state
 q = Q[0]
 
+# The set of final states Q
 F = ('q0')
 
 # Now we formally define our deterministic automaton.
@@ -33,9 +39,10 @@ string = '10001'
 def is_accepted(string, q):
   for char in string:
     q = d(q, char)
-  if q == 'q0':
+  if q in F:
     return True
   else:
     return False
 
-is_accepted('1001', q)
+print(is_accepted('1001', q))
+print(is_accepted('11100000', q))
