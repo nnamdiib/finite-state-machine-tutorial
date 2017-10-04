@@ -44,5 +44,8 @@ def is_accepted(string, q):
   else:
     return False
 
-print(is_accepted('1001', q))
-print(is_accepted('11100000', q))
+string1 = '1001' # Should be False
+string2 = '00000000011100000000' # Should be True
+
+assert(is_accepted(string1, q) == False)
+assert(is_accepted(string2, q) == True)
