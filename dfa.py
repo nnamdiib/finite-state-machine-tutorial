@@ -45,3 +45,11 @@ string2 = '00000000011100000000' # Should be True
 
 assert(is_accepted(string1, q) == False)
 assert(is_accepted(string2, q) == True)
+
+class DFA:
+  states = []
+  alphabet = None
+  initial_state = None
+  accept_states = []
+  transition = None
+  
